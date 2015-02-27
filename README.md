@@ -1,13 +1,6 @@
-One way to reproduce the bug:
+To reproduce the bug:
 
-1. Execute `sbt eclipse`
-2. Import the project in Eclipse
+1. Execute `sbt compile`
+2. go sleeping...
 
-Now, Eclipse should already take a long time to open `src/main/scala/x.scala`.
-
-If not, further changes can be done:
-
-1. Delete `.groupBy { x => ??? }` and save the document
-2. Undo the change and save again
-
-Now, the compiler shouldn't response normally anymore.
+The problem seems to be the `x => ???`. If it is replaced with `x => x`, the code compiles normally.
