@@ -1,8 +1,6 @@
 import com.nicta.scoobi.Scoobi._
 
-object WordCount extends ScoobiApp {
+object X {
   def lines: DList[String] = ???
-  def filtered = lines.filter { x => x != "" }.groupBy { x => ??? }
-
-  override def run = ()
+  def filtered = lines.groupBy { x => ??? }
 }
